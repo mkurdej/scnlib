@@ -1,4 +1,4 @@
-libscn
+scnlib
 ======
 
 WORK IN PROGRESS.
