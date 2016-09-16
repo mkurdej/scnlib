@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 cmake_policy(VERSION 3.5)
 
-project(libscn
+project(scnlib
     VERSION     0.1.0
     LANGUAGES   CXX
 )
