@@ -15,6 +15,9 @@ macro(scn_add_executable TARGET args)
     set_target_properties(${TARGET} PROPERTIES
         DEBUG_POSTFIX ${CMAKE_DEBUG_POSTFIX}
     )
+    install(TARGETS ${TARGET}
+        RUNTIME DESTINATION bin
+    )
 endmacro()
 
 macro(set_ide_folder args)
