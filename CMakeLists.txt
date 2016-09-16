@@ -33,6 +33,11 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/google-benchmark/include
 )
 
+set(GCC_OR_CLANG
+    "GNU"
+    "Clang"
+)
+
 if (MSVC)
     add_definitions(
         /DNOMINMAX=1
@@ -43,11 +48,19 @@ if (MSVC)
         #/D_SCL_SECURE_NO_WARNINGS
         #/D_SECURE_SCL=$<CONFIG:Debug>
     )
+    add_compile_options(
+        /WX
+        /W4
+    )
+elseif("${CMAKE_CXX_COMPILER_ID}" IN_LIST GCC_OR_CLANG)
+    add_compile_options(
+        -Werror
+        -Wall
+        -Wpedantic
+    )
 endif()
 
 add_subdirectory(thirdparty)
 add_subdirectory(bench)
 # add_subdirectory(src)
 # add_subdirectory(tests)
-
-# include(cpack_config)
