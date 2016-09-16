@@ -1,6 +1,11 @@
-= libscn =
+libscn
+======
 
-Like libfmt, but for parsing. I.e. a type-safe alternative for scanf.
+WORK IN PROGRESS.
+
+Small, safe and fast parsing library.
+
+Idea based on [fmtlib](http://fmtlib.net), but for parsing, i.e. a type-safe alternative for scanf.
 
 Goals:
 * Faster than scanf
