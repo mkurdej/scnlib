@@ -10,13 +10,17 @@ enable_testing()
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set(CMAKE_DEBUG_POSTFIX "d")
 
+macro(scn_add_executable TARGET args)
+    add_executable(${TARGET} ${args})
+    set_target_properties(${TARGET} PROPERTIES
+        DEBUG_POSTFIX ${CMAKE_DEBUG_POSTFIX}
+    )
+endmacro()
+
 macro(set_ide_folder args)
     set(folder ${ARGV0})
     foreach(project ${ARGN})
-        # message("${folder} <- ${project}")
-        if(TARGET ${project})
-            set_target_properties(${project} PROPERTIES FOLDER ${folder})
-        endif()
+        set_target_properties(${project} PROPERTIES FOLDER ${folder})
     endforeach()
 endmacro()
 

@@ -1,4 +1,4 @@
-add_executable(scanf
+scn_add_executable(scanf
     main.cpp
 
     boost_qi.cpp
