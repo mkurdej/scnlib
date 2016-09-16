@@ -4,6 +4,7 @@ add_executable(scanf
     boost_qi.cpp
     iostream.cpp
     scanf.cpp
+    strto.cpp
 )
 
 target_link_libraries(scanf
