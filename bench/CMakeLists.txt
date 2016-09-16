@@ -1,4 +1,8 @@
 add_executable(scanf
+    main.cpp
+
+    boost_qi.cpp
+    iostream.cpp
     scanf.cpp
 )
 
