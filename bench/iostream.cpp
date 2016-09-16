@@ -1,11 +1,10 @@
+#include "input.h"
 #include <benchmark/benchmark.h>
 #include <sstream>
 #include <string>
 
-static const std::string input = "12 132.43 234.5 -43 -34e-3 -4.53e3";
-
 static void BM_stringstream_numbers(benchmark::State &state) {
-  std::istringstream is(input);
+  std::istringstream is(test::input);
 
   int i1, i2;
   float f1, f2;
