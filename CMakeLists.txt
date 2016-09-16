@@ -22,6 +22,7 @@ endmacro()
 
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/boost
     ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/google-benchmark/include
 )
 
@@ -30,7 +31,7 @@ if (MSVC)
         /DNOMINMAX=1
         #/D_CRT_SECURE_NO_DEPRECATE
         /D_CRT_SECURE_NO_WARNINGS
-        /D_HAS_AUTO_PTR_ETC=0
+        #/D_HAS_AUTO_PTR_ETC=0
         #/D_HAS_ITERATOR_DEBUGGING=$<CONFIG:Debug>
         #/D_SCL_SECURE_NO_WARNINGS
         #/D_SECURE_SCL=$<CONFIG:Debug>
