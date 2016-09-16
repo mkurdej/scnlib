@@ -10,6 +10,16 @@ enable_testing()
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set(CMAKE_DEBUG_POSTFIX "d")
 
+macro(set_ide_folder args)
+    set(folder ${ARGV0})
+    foreach(project ${ARGN})
+        # message("${folder} <- ${project}")
+        if(TARGET ${project})
+            set_target_properties(${project} PROPERTIES FOLDER ${folder})
+        endif()
+    endforeach()
+endmacro()
+
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/include
     ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/google-benchmark/include

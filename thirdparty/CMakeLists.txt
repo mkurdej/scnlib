@@ -1,13 +1,3 @@
-macro(set_ide_folder args)
-    set(folder ${ARGV0})
-    foreach(project ${ARGN})
-        # message("${folder} <- ${project}")
-        if(TARGET ${project})
-            set_target_properties(${project} PROPERTIES FOLDER ${folder})
-        endif()
-    endforeach()
-endmacro()
-
 set_ide_folder("thirdparty/google-benchmark"
     benchmark
 )
