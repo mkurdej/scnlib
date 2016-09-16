@@ -9,12 +9,12 @@ static const std::string input{test::input};
 namespace qi = boost::spirit::qi;
 
 static void BM_boost_qi_numbers(benchmark::State &state) {
-  using boost::phoenix::ref;
-  using qi::_1;
-
   int i1, i2;
   float f1, f2;
   double d1, d2;
+
+  using boost::phoenix::ref;
+  using qi::_1;
 
   auto grammar =
       qi::copy(qi::int_[ref(i1) = _1] >> qi::float_[ref(f1) = _1] >>
