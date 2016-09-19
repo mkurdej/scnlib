@@ -6,6 +6,7 @@ scn_add_executable(scanf
 
     boost_qi.cpp
     iostream.cpp
+    scn_parse.cpp
     scanf.cpp
     strto.cpp
 )
