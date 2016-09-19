@@ -1,8 +1,8 @@
-#include "detail/warning.h"
 #include "input.h"
 #include <benchmark/benchmark.h>
 #include <boost/spirit/include/phoenix_core.hpp>
 #include <boost/spirit/include/phoenix_operator.hpp>
+#include <scn/detail/warning.h>
 SCN_WARNING_PUSH()
 // unreferenced formal parameter
 SCN_WARNING_DISABLE_MSVC(4100)
