@@ -17,6 +17,11 @@ static void BM_stringstream_numbers(benchmark::State &state) {
       state.SkipWithError("cannot parse");
       break;
     }
+
+    if (!is.eof()) {
+      state.SkipWithError("should reach end-of-file");
+      break;
+    }
   }
 }
 

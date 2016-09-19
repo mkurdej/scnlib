@@ -31,6 +31,11 @@ static void BM_strto_numbers(benchmark::State &state) {
 
     d2 = std::strtod(first, &last);
     first = last;
+
+    if (first != (input.c_str() + input.size())) {
+      state.SkipWithError("cannot parse");
+      break;
+    }
   }
 }
 
