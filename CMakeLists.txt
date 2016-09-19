@@ -10,8 +10,8 @@ enable_testing()
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set(CMAKE_DEBUG_POSTFIX "d")
 
-macro(scn_add_executable TARGET args)
-    add_executable(${TARGET} ${args})
+macro(scn_add_executable TARGET)
+    add_executable(${TARGET} ${ARGN})
     set_target_properties(${TARGET} PROPERTIES
         DEBUG_POSTFIX ${CMAKE_DEBUG_POSTFIX}
     )
