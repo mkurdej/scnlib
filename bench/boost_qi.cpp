@@ -1,8 +1,15 @@
+#include "detail/warning.h"
 #include "input.h"
 #include <benchmark/benchmark.h>
 #include <boost/spirit/include/phoenix_core.hpp>
 #include <boost/spirit/include/phoenix_operator.hpp>
+SCN_WARNING_PUSH()
+// unreferenced formal parameter
+SCN_WARNING_DISABLE_MSVC(4100)
+// declaration of 'attr_type' hides global declaration
+SCN_WARNING_DISABLE_MSVC(4459)
 #include <boost/spirit/include/qi.hpp>
+SCN_WARNING_POP()
 
 static const std::string input{test::input};
 
