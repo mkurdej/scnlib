@@ -1,6 +1,9 @@
 scn_add_executable(scanf
     main.cpp
 
+    detail/warning.h
+    input.h
+
     boost_qi.cpp
     iostream.cpp
     scanf.cpp
