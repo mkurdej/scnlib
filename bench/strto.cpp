@@ -8,7 +8,7 @@ static void BM_strto_numbers(benchmark::State &state) {
   float f1, f2;
   double d1, d2;
 
-  const std::string input = test::input;
+  const std::string input = test::input::mixed;
 
   while (state.KeepRunning()) {
     const char *first = input.c_str();

@@ -9,7 +9,7 @@ static void BM_scn_numbers(benchmark::State &state) {
   double d1, d2;
 
   while (state.KeepRunning()) {
-    scn::parse(test::input, "{}{}{}{}{}{}", i1, f1, d1, i2, f2, d2);
+    scn::parse(test::input::mixed, "{}{}{}{}{}{}", i1, f1, d1, i2, f2, d2);
   }
 }
 

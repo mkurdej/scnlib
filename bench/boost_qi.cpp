@@ -11,7 +11,7 @@ SCN_WARNING_DISABLE_MSVC(4459)
 #include <boost/spirit/include/qi.hpp>
 SCN_WARNING_POP()
 
-static const std::string input{test::input};
+static const std::string input{test::input::mixed};
 
 namespace qi = boost::spirit::qi;
 

@@ -9,8 +9,8 @@ static void BM_sscanf_numbers(benchmark::State &state) {
   double d1, d2;
 
   while (state.KeepRunning()) {
-    int successes = std::sscanf(test::input, "%d%f%lf%d%f%lf", &i1, &f1, &d1,
-                                &i2, &f2, &d2);
+    int successes = std::sscanf(test::input::mixed, "%d%f%lf%d%f%lf", &i1, &f1,
+                                &d1, &i2, &f2, &d2);
     if (successes != 6) {
       state.SkipWithError("cannot parse");
       break;

@@ -1,7 +1,7 @@
 scn_add_executable(scanf
     main.cpp
 
-    detail/warning.h
+    ${CMAKE_SOURCE_DIR}/include/scn/detail/warning.h
     input.h
 
     boost_qi.cpp

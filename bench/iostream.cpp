@@ -8,7 +8,7 @@ static void BM_stringstream_numbers(benchmark::State &state) {
   float f1, f2;
   double d1, d2;
 
-  std::istringstream is(test::input);
+  std::istringstream is(test::input::mixed);
 
   while (state.KeepRunning()) {
     is.seekg(0); // rewind
