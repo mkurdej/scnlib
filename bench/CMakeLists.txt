@@ -10,6 +10,7 @@ scn_add_executable(scanf
     iostream.cpp
     scn_parse.cpp
     scanf.cpp
+    sto.cpp
     strto.cpp
 )
 
