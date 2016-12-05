@@ -1,6 +1,6 @@
 #include "input.h"
-#include <benchmark/benchmark.h>
 #include <scn/scn.hpp>
+#include <benchmark/benchmark.h>
 #include <string>
 
 static void BM_scn_numbers(benchmark::State &state) {

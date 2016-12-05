@@ -7,4 +7,5 @@ if (MSVC)
     )
 endif()
 
+option(BENCHMARK_ENABLE_TESTING "Enable testing of the benchmark library." OFF)
 add_subdirectory(google-benchmark)
