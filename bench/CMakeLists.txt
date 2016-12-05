@@ -4,6 +4,7 @@ scn_add_executable(scanf
     ${CMAKE_SOURCE_DIR}/include/scn/detail/warning.h
     input.h
 
+    boost_lexical_cast.cpp
     boost_qi.cpp
     iostream.cpp
     scn_parse.cpp

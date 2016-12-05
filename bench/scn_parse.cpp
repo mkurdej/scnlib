@@ -14,3 +14,13 @@ static void BM_scn_numbers(benchmark::State &state) {
 }
 
 BENCHMARK(BM_scn_numbers);
+
+static void BM_scn_int64(benchmark::State &state) {
+  std::int64_t i;
+
+  while (state.KeepRunning()) {
+    scn::parse(test::input::int64, "{}", i);
+  }
+}
+
+BENCHMARK(BM_scn_int64);

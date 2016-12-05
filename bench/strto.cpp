@@ -4,11 +4,11 @@
 #include <string>
 
 static void BM_strto_numbers(benchmark::State &state) {
+  static const std::string input = test::input::mixed;
+
   int i1, i2;
   float f1, f2;
   double d1, d2;
-
-  const std::string input = test::input::mixed;
 
   while (state.KeepRunning()) {
     const char *first = input.c_str();
@@ -40,3 +40,24 @@ static void BM_strto_numbers(benchmark::State &state) {
 }
 
 BENCHMARK(BM_strto_numbers);
+
+static void BM_strto_int64(benchmark::State &state) {
+  static const std::string input = test::input::int64;
+
+  std::int64_t i;
+
+  while (state.KeepRunning()) {
+    const char *first = input.c_str();
+    char *last;
+
+    i = std::strtoll(first, &last, 10);
+    first = last;
+
+    if (first != (input.c_str() + input.size())) {
+      state.SkipWithError("cannot parse");
+      break;
+    }
+  }
+}
+
+BENCHMARK(BM_strto_int64);

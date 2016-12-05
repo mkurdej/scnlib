@@ -26,3 +26,25 @@ static void BM_stringstream_numbers(benchmark::State &state) {
 }
 
 BENCHMARK(BM_stringstream_numbers);
+
+static void BM_stringstream_int64(benchmark::State &state) {
+  std::int64_t i;
+
+  std::istringstream is(test::input::int64);
+
+  while (state.KeepRunning()) {
+    is.seekg(0); // rewind
+    is >> i;
+    if (is.bad()) {
+      state.SkipWithError("cannot parse");
+      break;
+    }
+
+    if (!is.eof()) {
+      state.SkipWithError("should reach end-of-file");
+      break;
+    }
+  }
+}
+
+BENCHMARK(BM_stringstream_int64);
