@@ -38,7 +38,7 @@ set(GCC_OR_CLANG
     "Clang"
 )
 
-if (MSVC)
+if(MSVC)
     add_definitions(
         /DNOMINMAX=1
         #/D_CRT_SECURE_NO_DEPRECATE
@@ -51,6 +51,7 @@ if (MSVC)
     add_compile_options(
         /WX
         /W4
+        /wd4141 # 'inline': used more than once
     )
 elseif("${CMAKE_CXX_COMPILER_ID}" IN_LIST GCC_OR_CLANG)
     add_compile_options(
